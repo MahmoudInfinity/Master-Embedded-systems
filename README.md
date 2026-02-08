@@ -1,1 +1,18 @@
-# Master-Embedded-systemsThis repo is for C and embedded c programs (learn in depth diploma)
+# Master Embedded Systems
+
+## Description
+This repository is a learning path for Embedded Systems and C programming.
+
+## Contents
+- C basics
+- Data structures
+- Microcontroller concepts
+- Drivers and HAL
+
+## Tools
+- GCC
+- Make
+- Git
+
+## Author
+Mahmoud Elmowafy
