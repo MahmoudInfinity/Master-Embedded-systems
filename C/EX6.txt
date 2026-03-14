@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	float x , y , z ;
+
+	printf("##########Console-output###\n");
+
+	printf("Enter the value of a: \n");
+
+	fflush(stdout);
+
+	scanf("%f",&x);
+
+	printf("Enter the value of b: \n");
+
+	fflush(stdout);
+
+	scanf("%f",&y);
+
+
+	z = x;
+	x = y;
+	y = z;
+	printf("After swapping value of a  =   %f\n", x);
+	printf("After swapping value of b =   %f\n", y);
+
+	printf("###########################\n"
+			"########################################################################");
+
+	return 0;
+}
+
+
+
+
