@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	unsigned char x;
+
+	printf("##########Console-output###\n"
+			"Enter a character: \n");
+
+
+	fflush(stdout);
+
+	scanf("%c",&x);
+
+	printf("ASCI value of %c =  %d\n", x,x);
+
+	printf("###########################\n"
+			"########################################################################");
+
+	return 0;
+}
+
+
+
+
