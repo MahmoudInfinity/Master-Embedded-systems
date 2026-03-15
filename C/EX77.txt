@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	int x , y  ;
+
+	printf("##########Console-output###\n");
+
+	printf("Enter the value of a: \n");
+
+	fflush(stdout);
+
+	scanf("%d",&x);
+
+	printf("Enter the value of b: \n");
+
+	fflush(stdout);
+
+	scanf("%d",&y);
+
+
+
+	x = x ^ y;
+
+
+
+	y = x ^ y;
+
+
+	x = x ^ y;
+
+
+
+
+
+
+	printf("After swapping value of a  =   %d\n", x);
+	printf("After swapping value of b =   %d\n", y);
+
+	printf("###########################\n"
+			"########################################################################");
+
+	return 0;
+}
+
+
+
+
