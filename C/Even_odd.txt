@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	int x ;
+
+	printf("##########Console-output###\n");
+while(1)
+{
+	printf("Enter the Integer you want  to check: \n");
+
+	fflush(stdout);
+
+	scanf("%d",&x);
+
+
+	if ( x %2 == 0)
+		printf("%d is Even.\n" , x);
+	else
+		printf("%d is Odd.\n" , x);
+
+
+}
+	return 0;
+}
+
+
+
+
+
