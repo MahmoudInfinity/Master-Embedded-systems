@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	float x , z , y , largest  ;
+
+	printf("##########Console-output###\n");
+	printf("This program Gets the largest of three numbers\n");
+	while(1)
+	{
+
+
+		printf("Enter the first number : \n");
+
+		fflush(stdout);
+
+		scanf("%f", &x);
+
+		printf("Enter the second number : \n");
+
+		fflush(stdout);
+
+		scanf("%f", &y);
+
+		printf("Enter the third number : \n");
+
+		fflush(stdout);
+
+		scanf("%f", &z);
+
+		if (x >= y && x >= z)
+			largest = x;
+		else if (y >= x && y >= z)
+			largest = y;
+		else
+			largest = z;
+
+
+		printf("The largest number is: %f\n", largest);
+		return 0;
+	}
+
+}
+
