@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+
+    char input[100];
+    char operand1[100];
+    char operand2[100];
+
+    double op1, op2;
+    char operator;
+
+    int j, k, count;
+
+    while(1)
+    {
+        j = 0;
+        k = 0;
+        count = 0;
+
+        printf("Enter an expression (e.g., 5 + 3): \n");
+        fflush(stdout);
+        fgets(input, sizeof(input), stdin);
+
+        input[strcspn(input,"\n")] = 0;
+
+        for(int i = 0; input[i] != '\0'; i++)
+        {
+            if(input[i] != ' ' && count == 0)
+            {
+                operand1[j++] = input[i];
+            }
+
+            else if(input[i] == ' ')
+            {
+                operator = input[i+1];
+                count = 1;
+                i += 2;
+            }
+
+            else
+            {
+                operand2[k++] = input[i];
+            }
+        }
+
+        operand1[j] = '\0';
+        operand2[k] = '\0';
+
+        op1 = atof(operand1);
+        op2 = atof(operand2);
+
+        double result;
+
+        switch(operator)
+        {
+            case '+': result = op1 + op2; break;
+            case '-': result = op1 - op2; break;
+            case '*': result = op1 * op2; break;
+
+            case '/':
+                if(op2 != 0)
+                    result = op1 / op2;
+                else {
+                    printf("Division by zero\n");
+                    continue;
+                }
+                break;
+
+            default:
+                printf("Unknown operator\n");
+                continue;
+        }
+
+        printf("Operand1: %.2lf\n", op1);
+        printf("Operator: %c\n", operator);
+        printf("Operand2: %.2lf\n", op2);
+        printf("Result: %.2lf\n", result);
+    }
+
+    return 0;
+}
