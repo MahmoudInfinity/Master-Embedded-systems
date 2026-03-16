@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	float x   ;
+
+	printf("##########Console-output###\n");
+	printf("This program checks if the number is Zero , positive or negative \n");
+
+	while(1)
+	{
+
+
+		printf("Enter the the number you want to check : \n");
+
+		fflush(stdout);
+
+		scanf("%f", &x);
+
+
+		if (x == 0)
+			printf("The Number is zero. \n");
+		else if (x > 0)
+			printf("The Number is positive. \n");
+		else
+			printf("The Number is negative.\n");
+
+
+
+
+	}
+	return 0;
+
+}
+
