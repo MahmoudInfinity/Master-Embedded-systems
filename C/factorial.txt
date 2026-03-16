@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int factorial(int n)
+{
+    int result = 1;
+
+    for(int i = 1; i <= n; i++)
+        result *= i;
+
+    return result;
+}
+
+int main() {
+
+	 int x   ;
+
+	printf("##########Console-output###\n");
+	printf("This program calculates the factorial of an integer N \n");
+
+	while(1)
+	{
+
+
+		printf("Enter the the Number N to get the factorial  : \n");
+
+		fflush(stdout);
+
+		scanf("%d", &x);
+
+       if(x < 0)
+    	   printf("error!! you can't get a factorial for a neative number\n");
+
+       else
+    	   printf("Factorial of %d  equals %d \n", x , factorial(x));
+
+	}
+	return 0;
+
+}
+
