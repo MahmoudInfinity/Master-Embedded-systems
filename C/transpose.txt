@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+#define MAX 100
+
+int main() {
+
+	int rows, col;
+
+	printf("Enter number of rows: ");
+	fflush(stdout);
+	scanf("%d", &rows);
+
+	printf("Enter number of columns: ");
+	fflush(stdout);
+	scanf("%d", &col);
+
+	if (rows <= 0 || rows > MAX || col <= 0 || col > MAX) {
+		printf("Invalid matrix size.\n");
+		return 1;
+	}
+
+	double arr[MAX][MAX];
+	double Transpose[MAX][MAX];
+
+	// Input
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < col; j++) {
+			printf("Enter A[%d][%d]: ", i + 1, j + 1);
+			fflush(stdout);
+			scanf("%lf", &arr[i][j]);
+		}
+	}
+
+	// Transpose
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < col; j++) {
+			Transpose[j][i] = arr[i][j];
+		}
+	}
+
+	// Print original
+	printf("\nEntered Matrix:\n");
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < col; j++) {
+			printf("%.2lf  ", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+	// Print transpose
+	printf("\nTranspose:\n");
+	for (int i = 0; i < col; i++) {
+		for (int j = 0; j < rows; j++) {
+			printf("%.2lf  ", Transpose[i][j]);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
