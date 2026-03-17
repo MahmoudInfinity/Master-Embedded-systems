@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+
+
+int main() {
+
+	int n , element , location;
+
+	printf("Enter the number of elements: \n");
+	fflush(stdout);
+	scanf("%d", &n);
+	int arr[n];
+
+	printf("\nEnter the elements: \n");
+	for (int i = 0; i < n; i++) {
+
+		fflush(stdout);
+		scanf("%d", &arr[i]);
+
+	}
+	for(int i = 0 ; i < n ; ++i )
+	{
+		printf("%d ", arr[i]);
+
+
+	}
+
+
+	printf("\nEnter the element to be inserted: \n");
+
+	fflush(stdout);
+	scanf("%d", &element);
+
+
+
+	printf("Enter the location: \n");
+	fflush(stdout);
+	scanf("%d", &location);
+
+
+	arr[location -1] = element;
+
+
+	for(int i = 0 ; i < n ; ++i )
+	{
+		printf("%d ", arr[i]);
+
+
+	}
+
+
+
+	return 0;
+}
