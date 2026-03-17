@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+void Insert(double array[2][2], char c)
+{
+    for(int i = 0; i < 2; ++i)
+    {
+        for(int j = 0; j < 2; ++j)
+        {
+            printf("Please enter element %c[%d][%d]: ", c, i+1, j+1);
+            fflush(stdout);
+            scanf("%lf", &array[i][j]);
+        }
+    }
+}
+
+void AddMatrix(double a[2][2], double b[2][2])
+{
+    double sum[2][2];
+
+    for(int i = 0; i < 2; ++i)
+    {
+        for(int j = 0; j < 2; ++j)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    printf("\nSum of Matrices:\n");
+
+    printf("%8.2lf %8.2lf\n", sum[0][0], sum[0][1]);
+    printf("%8.2lf %8.2lf\n", sum[1][0], sum[1][1]);
+}
+
+int main()
+{
+    double a[2][2];
+    double b[2][2];
+
+    printf("This is a C program that adds two matrices\n");
+
+    printf("Enter elements of the first matrix:\n");
+    Insert(a, 'A');
+
+    printf("Enter elements of the second matrix:\n");
+    Insert(b, 'B');
+
+    AddMatrix(a, b);
+
+    return 0;
+}
