@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+void primesInRange(int start, int end) {
+    int isPrime[end + 1];
+
+
+    for (int i = 0; i <= end; i++)
+        isPrime[i] = 1;
+
+    isPrime[0] = isPrime[1] = 0;
+
+
+    for (int i = 2; i * i <= end; i++) {
+        if (isPrime[i]) {
+            for (int j = i * i; j <= end; j += i) {
+                isPrime[j] = 0;
+            }
+        }
+    }
+
+    printf("prime numbers between %d and %d are: \n", start , end);
+
+    for (int i = start; i <= end; i++) {
+        if (isPrime[i])
+            printf("%d ", i);
+    }
+    printf("\n");
+}
+
+int main()
+
+{
+	int start = 0, end = 0;
+
+	printf("Please enter the start and the end of the interval to find prime numbers: \n");
+
+	fflush(stdout);
+
+	scanf("%d", &start);
+
+	printf(" \n");
+
+	scanf("%d", &end);
+
+
+	primesInRange(start,  end);
+
+
+
+
+
+}
