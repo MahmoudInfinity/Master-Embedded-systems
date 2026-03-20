@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include "string.h"
+
+typedef struct S_complex
+{
+
+	float real;
+
+	float imaginary;
+
+
+}S;
+
+
+
+int main()
+{
+	S comp;
+
+	S* P_complex = &comp;
+
+	S comp2;
+
+	S* P_complex2 = &comp2;
+
+
+	printf("Enter the first complex number respectively: \n");
+
+	fflush(stdout);
+
+	scanf("%f", &P_complex-> real);
+
+	scanf("%f", &P_complex-> imaginary);
+
+
+	printf("Enter the second complex number respectively: \n");
+
+		fflush(stdout);
+
+		scanf("%f", &P_complex2-> real);
+
+		scanf("%f", &P_complex2-> imaginary);
+
+
+ printf("Sum of the two complex numbers:   %.2f + %.2f i ",  P_complex-> real + P_complex2-> real , P_complex-> imaginary + P_complex2-> imaginary );
+
+    return 0;
+}
