@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include "string.h"
+
+typedef struct S_student
+{
+	char name[100];
+
+	int roll;
+
+	float mark;
+
+
+}S;
+
+
+void PrintStudent(S* pStd)
+{
+
+  printf("Student Name:  %s\n" , pStd -> name);
+
+  fflush(stdout);
+
+  printf("Student roll number:  %d\n" , pStd -> roll);
+
+  fflush(stdout);
+
+  printf("Student mark:  %f\n" , pStd -> mark);
+
+  fflush(stdout);
+
+}
+
+
+
+int main()
+{
+	S student;
+
+	S* Pstudent = &student;
+
+	printf("Enter the information of the student: \n");
+
+	printf("Enter the name of the student: \n");
+
+	fflush(stdout);
+
+	fgets(Pstudent -> name , sizeof(Pstudent -> name ) , stdin);
+
+	Pstudent->name[strcspn(Pstudent->name, "\n")] = '\0';
+
+	printf("Enter the roll number of the student: \n");
+
+	fflush(stdout);
+
+
+	scanf("%d", &Pstudent-> roll);
+
+	printf("Enter the mark of the student: \n");
+
+	fflush(stdout);
+
+	scanf("%f", &Pstudent-> mark);
+
+	PrintStudent(Pstudent);
+
+    return 0;
+}
+
