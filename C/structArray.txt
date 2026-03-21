@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include "string.h"
+
+typedef struct S_student
+{
+	char name[100];
+
+	int roll;
+
+	float mark;
+
+
+}S;
+
+
+void PrintStudent(S* pStd)
+{
+
+	printf("Student Name:  %s\n" , pStd -> name);
+
+	fflush(stdout);
+
+	printf("Student roll number:  %d\n" , pStd -> roll);
+
+	fflush(stdout);
+
+	printf("Student mark:  %f\n" , pStd -> mark);
+
+	fflush(stdout);
+
+}
+
+void TakeStudent(S* pStd)
+{
+
+	printf("Enter the roll number: \n");
+
+	fflush(stdout);
+
+	scanf("%d", & pStd-> roll);
+
+	getchar();  // to clean the buffer
+
+	printf("Enter the student name: \n");
+
+	fflush(stdout);
+
+	fgets(pStd-> name , sizeof(pStd -> name) , stdin);
+
+	pStd->name[strcspn(pStd->name, "\n")] = '\0';
+
+	printf("Enter the mark: \n");
+
+	fflush(stdout);
+
+	scanf("%f", & pStd-> mark);
+}
+
+
+int main()
+{
+	S student[100]= {0};
+
+    int students_number;
+
+	printf("Enter the number of students you want to save: \n");
+
+	fflush(stdout);
+
+    scanf("%d", &students_number);
+    getchar(); // to clean the buffer
+    for(int i = 0 ; i < students_number ; i++)
+    {
+    	TakeStudent(&student[i]);
+
+
+    }
+
+
+    for(int i = 0 ; i < students_number ; i++)
+        {
+    	PrintStudent(&student[i]);
+
+
+        }
+	return 0;
+}
+
