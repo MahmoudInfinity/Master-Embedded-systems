@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+// Macro to define PI
+#define PI 3.14159
+
+// Parameterized macro to calculate area: Area = PI * r * r
+#define AREA_OF_CIRCLE(r) (PI * (r) * (r))
+
+int main() {
+
+	float radius, area;
+
+	printf("Enter the radius: \n");
+	fflush(stdout);
+
+	if (scanf("%f", &radius) == 1) {
+
+		// Using the macro
+		area = AREA_OF_CIRCLE(radius);
+
+		printf("Area = %.2f\n", area);
+
+	} else {
+
+		printf("Invalid input.\n");
+	}
+
+	return 0;
+}
