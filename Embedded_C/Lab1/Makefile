@@ -1,25 +1,32 @@
 #@copywrite Mahmoud Elmowafy
 
+CC=arm-none-eabi-
+CFLAGS= -g -mcpu=arm926ej-s
+INCS= -I .
+LIBS=
+
+all: versatilepb.bin
+	@echo "=========Build is Done!======"
 	
 startup.o: 	 startup.s
 
-	arm-none-eabi-as.exe -mcpu=arm926ej-s startup.s -o startup.o
+	$(CC)as.exe $(CFLAGS) $< -o $@
 	
 uart.o: uart.c
 
-	arm-none-eabi-gcc.exe -c -mcpu=arm926ej-s -nostdlib -ffreestanding -I . uart.c -o uart.o
+	$(CC)gcc.exe -c $(CFLAGS)  $(INCS) $< -o $@
 
 app.o: app.c 
 
-	arm-none-eabi-gcc.exe -c -mcpu=arm926ej-s -nostdlib -ffreestanding -I . app.c -o app.o
+	$(CC)gcc.exe -c  $(CFLAGS)  $(INCS) $< -o $@
 
 Versatilepb.elf:  startup.o  uart.o app.o
 
-	arm-none-eabi-ld.exe -T linker_script.ld startup.o app.o uart.o -o Versatilepb.elf -MAP=map_file.map
+	$(CC)ld.exe -T linker_script.ld $(LIBS) startup.o app.o uart.o -o $@ -MAP=map_file.map
 
 versatilepb.bin: Versatilepb.elf
 
-	arm-none-eabi-objcopy.exe -O binary Versatilepb.elf Versatilepb.bin
+	$(CC)objcopy.exe -O binary $< $@
 
 clean_all:
 	rm *.o *.elf *.bin
